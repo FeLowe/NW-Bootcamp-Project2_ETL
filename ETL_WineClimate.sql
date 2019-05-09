@@ -9,3 +9,9 @@ create table wines (
     Score int,
     Variety varchar(50)
 );
+
+create table country_climates(
+	id int primary key,
+    Country varchar(50),
+    Climate varchar(50)
+);
