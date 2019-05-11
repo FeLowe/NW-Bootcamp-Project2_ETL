@@ -1,6 +1,16 @@
 create database wine_climate_db;
 
+/*
+if needed, code to drop database:
+drop database wine_climate_db;
+*/
+
 use wine_climate_db;
+
+SHOW VARIABLES LIKE 'character_set%';
+
+ALTER DATABASE wine_climate_db CHARACTER SET utf8 COLLATE utf8_general_ci;
+set global character_set_server = utf8;
 
 create table wines (
 	id int primary key,
@@ -29,7 +39,11 @@ drop table country_climates;
 
 select * from country_climates;
 
+/*
 select w.country, designation, score, variety, c.climate
 from wines as w
 join country_climates as c
 on (w.country = c.country);
+*/
+
+select * from country_climates;
