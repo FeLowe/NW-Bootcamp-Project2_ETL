@@ -31,8 +31,6 @@ create table country_climates(
     climate varchar(50)
 );
 
-UPDATE wines SET country = 'United States' WHERE country = 'US';
-
 /*
 if needed, code to drop table:
 drop table country_climates;
@@ -41,6 +39,8 @@ drop table country_climates;
 select * from country_climates;
 
 select * from wines;
+
+UPDATE wines SET country = 'United States' WHERE country = 'US';
 
 select w.country, designation, score, variety, c.climate
 from wines as w
