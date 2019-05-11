@@ -8,10 +8,6 @@ drop database wine_climate_db;
 use wine_climate_db;
 
 SHOW VARIABLES LIKE 'character_set%';
-/*
-ALTER DATABASE wine_climate_db CHARACTER SET utf8 COLLATE utf8_general_ci;
-set global character_set_server = utf8;
-*/
 
 create table wines (
 	id int primary key,
@@ -35,27 +31,26 @@ create table country_climates(
     climate varchar(50)
 );
 
+UPDATE wines SET country = 'United States' WHERE country = 'US';
+
 /*
 if needed, code to drop table:
 drop table country_climates;
 */
 
-
-
-select w.country, designation, score, variety, c.climate
-from wines as w
-left join country_climates as c
-on (w.country = c.country);
-
-
-
 select * from country_climates;
 
 select * from wines;
 
-/*
-SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME
-FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'ETL_WineClimate';
-*/
+select w.country, designation, score, variety, c.climate
+from wines as w
+left join country_climates as c
+on (w.country = c.country)
+group by w.country;
 
-UPDATE wines SET country = 'United States' WHERE country = 'US';
+select w.country, avg(score), c.climate
+from wines as w
+left join country_climates as c
+on (w.country = c.country)
+group by w.country
+order by avg(score) desc;
