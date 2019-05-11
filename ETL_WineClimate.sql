@@ -22,6 +22,8 @@ create table wines (
     variety varchar(50)
 );
 
+ALTER TABLE wines CONVERT TO CHARACTER SET latin1;
+
 /*
 if needed, code to drop table:
 drop table wines;
@@ -38,14 +40,16 @@ if needed, code to drop table:
 drop table country_climates;
 */
 
-select * from country_climates;
 
-/*
+
 select w.country, designation, score, variety, c.climate
 from wines as w
-join country_climates as c
+left join country_climates as c
 on (w.country = c.country);
-*/
+
+
+
+select * from country_climates;
 
 select * from wines;
 
@@ -53,3 +57,5 @@ select * from wines;
 SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME
 FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'ETL_WineClimate';
 */
+
+UPDATE wines SET country = 'United States' WHERE country = 'US';
