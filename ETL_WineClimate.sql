@@ -36,11 +36,11 @@ if needed, code to drop table:
 drop table country_climates;
 */
 
+UPDATE wines SET country = 'United States' WHERE country = 'US';
+
 select * from country_climates;
 
 select * from wines;
-
-UPDATE wines SET country = 'United States' WHERE country = 'US';
 
 select w.country, designation, score, variety, c.climate
 from wines as w
@@ -48,7 +48,7 @@ left join country_climates as c
 on (w.country = c.country)
 group by w.country;
 
-select w.country, avg(score), c.climate
+select w.country, avg(score), avg(price), c.climate
 from wines as w
 left join country_climates as c
 on (w.country = c.country)
