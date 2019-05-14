@@ -44,13 +44,13 @@ select * from wines;
 
 select w.country, designation, score, variety, c.climate
 from wines as w
-left join country_climates as c
+join country_climates as c
 on (w.country = c.country)
 group by w.country;
 
 select w.country, avg(score), avg(price), c.climate
 from wines as w
-left join country_climates as c
+join country_climates as c
 on (w.country = c.country)
 group by w.country
 order by avg(score) desc;
