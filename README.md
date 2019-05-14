@@ -32,7 +32,7 @@ and MySQL. This update enabled MYSQL to read in words containing symbols and acc
 The final tables created in MySQL are called ‘wines’ and ‘country_climate.’ In the ‘wines’ table, the columns include “country,” “designation,” “score,” “variety,” and “climate.” In the ‘country_climate’ table, the columns include “country” and “climate.” After noticing the two tables spelled “United States” differently: one as “U.S.” and the other “United States,” we updated the variable “United States” in the ‘wines’ table so the two tables’ naming convention is consistent. Lastly, we joined the two tables by grouping the column “country.”
 
 To further the exercise, we thought it would be interesting to look at how the countries rank by wine scores. We averaged the wine scores for each country then ranked the countries in 
-descending order. Surprisingly, the top 3 countries that have the highest rated wines are: England, India, and Austria.
+descending order. Surprisingly, the top 3 countries that have the highest rated wines are: India, Austria, and Germany. 
 
 
  
