@@ -7,13 +7,13 @@ We extracted two datasets ‘Wine Reviews’ and ‘Countries of the World’ fr
 * Wines Source: https://www.kaggle.com/zynicide/wine-reviews.
 * Countries Source: https://www.kaggle.com/fernandol/countries-of-the-world. 
  
-&nbsp **2. Transform: what data cleaning or transformation was required.**
+**2. Transform: what data cleaning or transformation was required.**
 
 First, we identified that both datasets contain the column “country” which will allow us to join the two. 
 
 Then we utilized MySQL to create the database ‘wine_climate’ with the tables ‘wines’ and ‘country_climates.’ Subsequently read in the csv files in Jupyter Notebook and imported pandas and sqlalchemy. We took the following steps to clean and organize the two datasets. While these steps do not reflect the exact order in which the code was written out, this is the most succinct way to understand the overall process we took:
 
-&nbsp **1.** After reading in the ‘Wines’ data file, we renamed the “unnamed:0” column to “id” so we could sort the column by their number in ascending order. And renamed “points” to “score.” <br />
+**1.** After reading in the ‘Wines’ data file, we renamed the “unnamed:0” column to “id” so we could sort the column by their number in ascending order. And renamed “points” to “score.” <br />
 
 **2.** Then created a new dataframe called ‘wines’ containing the columns “id,” “country,” “designation,” “score,” “price,” and “variety.” <br />
 
